@@ -1,0 +1,253 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f0f4f8;
+    color: #2d3748;
+    min-height: 100vh;
+}
+
+.page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 16px 64px;
+}
+
+/* header */
+header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a365d;
+}
+
+.subtitle {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+/* cards */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2b6cb0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ebf8ff;
+}
+
+/* form grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.field select,
+.field input {
+    padding: 10px 12px;
+    border: 1.5px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #2d3748;
+    background: #fff;
+    transition: border-color 0.15s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23718096' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+}
+
+.field select:focus,
+.field input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49,130,206,0.15);
+}
+
+/* submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background: #2b6cb0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+button[type="submit"]:hover {
+    background: #2c5282;
+}
+
+button[type="submit"]:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+}
+
+/* result card */
+.risk-display {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.risk-label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.risk-label.low    { color: #276749; }
+.risk-label.medium { color: #b7791f; }
+.risk-label.high   { color: #c53030; }
+
+.risk-bar-container {
+    background: #edf2f7;
+    border-radius: 999px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.risk-bar {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.5s ease;
+}
+
+.risk-bar.low    { background: #38a169; }
+.risk-bar.medium { background: #d69e2e; }
+.risk-bar.high   { background: #e53e3e; }
+
+.risk-score {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #4a5568;
+}
+
+.result-note {
+    margin-top: 14px;
+    font-size: 0.88rem;
+    color: #718096;
+    text-align: center;
+}
+
+/* feature importance */
+.importance-subtitle {
+    font-size: 0.88rem;
+    color: #718096;
+    margin-top: -12px;
+    margin-bottom: 20px;
+}
+
+.importance-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 9px;
+}
+
+.importance-name {
+    width: 220px;
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    color: #4a5568;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.importance-track {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 18px;
+    position: relative;
+}
+
+.importance-center-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #cbd5e0;
+}
+
+.importance-fill {
+    height: 100%;
+    border-radius: 2px;
+    position: absolute;
+}
+
+.importance-fill.positive {
+    background: #e53e3e;
+    left: 50%;
+}
+
+.importance-fill.negative {
+    background: #38a169;
+    right: 50%;
+}
+
+.importance-value {
+    width: 54px;
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    color: #718096;
+    text-align: right;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #a0aec0;
+    margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .importance-name { width: 130px; font-size: 0.74rem; }
+}

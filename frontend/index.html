@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Readmission Risk Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <header>
+        <h1>Hospital Readmission Risk Predictor</h1>
+        <p class="subtitle">Predicts 30-day readmission risk for diabetic patients using logistic regression</p>
+    </header>
+
+    <main>
+        <div class="card form-card">
+            <h2>Patient Information</h2>
+            <form id="predict-form" onsubmit="handleSubmit(event)">
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="age">Age Group</label>
+                        <select id="age" required>
+                            <option value="">Select age group</option>
+                            <option value="[0-10)">[0-10)</option>
+                            <option value="[10-20)">[10-20)</option>
+                            <option value="[20-30)">[20-30)</option>
+                            <option value="[30-40)">[30-40)</option>
+                            <option value="[40-50)">[40-50)</option>
+                            <option value="[50-60)">[50-60)</option>
+                            <option value="[60-70)">[60-70)</option>
+                            <option value="[70-80)">[70-80)</option>
+                            <option value="[80-90)">[80-90)</option>
+                            <option value="[90-100)">[90-100)</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="insulin">Insulin Treatment</label>
+                        <select id="insulin" required>
+                            <option value="">Select insulin status</option>
+                            <option value="No">No insulin</option>
+                            <option value="Steady">Steady (no change)</option>
+                            <option value="Up">Up (increased dose)</option>
+                            <option value="Down">Down (decreased dose)</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="time">Days in Hospital</label>
+                        <input type="number" id="time" min="1" max="14" placeholder="e.g. 4" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="meds">Number of Medications</label>
+                        <input type="number" id="meds" min="1" max="81" placeholder="e.g. 15" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="inpatient">Prior Inpatient Visits</label>
+                        <input type="number" id="inpatient" min="0" max="21" placeholder="e.g. 1" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="emergency">Prior Emergency Visits</label>
+                        <input type="number" id="emergency" min="0" max="76" placeholder="e.g. 0" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn">Predict Readmission Risk</button>
+            </form>
+        </div>
+
+        <div class="card result-card" id="result-card" style="display:none">
+            <h2>Prediction Result</h2>
+            <div class="risk-display">
+                <div class="risk-label" id="risk-label"></div>
+                <div class="risk-bar-container">
+                    <div class="risk-bar" id="risk-bar"></div>
+                </div>
+                <div class="risk-score" id="risk-score"></div>
+            </div>
+            <p class="result-note" id="result-note"></p>
+        </div>
+
+        <div class="card importance-card" id="importance-card" style="display:none">
+            <h2>Feature Importance</h2>
+            <p class="importance-subtitle">Logistic regression coefficients — how each factor shifts readmission risk</p>
+            <div id="importance-chart"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>CSC 44700 Final Project &mdash; Sehr Abrar &mdash; Diabetes 130-US Hospitals Dataset (n=101,766)</p>
+    </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

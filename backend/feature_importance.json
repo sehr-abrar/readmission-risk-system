@@ -1,0 +1,74 @@
+[
+  {
+    "feature": "age_[10-20)",
+    "coefficient": -0.5277
+  },
+  {
+    "feature": "number_inpatient",
+    "coefficient": 0.3768
+  },
+  {
+    "feature": "insulin_No",
+    "coefficient": -0.2534
+  },
+  {
+    "feature": "age_[80-90)",
+    "coefficient": 0.2518
+  },
+  {
+    "feature": "age_[70-80)",
+    "coefficient": 0.2155
+  },
+  {
+    "feature": "insulin_Steady",
+    "coefficient": -0.1693
+  },
+  {
+    "feature": "age_[90-100)",
+    "coefficient": 0.1594
+  },
+  {
+    "feature": "insulin_Up",
+    "coefficient": -0.1315
+  },
+  {
+    "feature": "age_[60-70)",
+    "coefficient": 0.1206
+  },
+  {
+    "feature": "time_in_hospital",
+    "coefficient": 0.0844
+  },
+  {
+    "feature": "number_emergency",
+    "coefficient": 0.0591
+  },
+  {
+    "feature": "num_medications",
+    "coefficient": 0.0427
+  },
+  {
+    "feature": "age_[20-30)",
+    "coefficient": 0.0417
+  },
+  {
+    "feature": "age_[30-40)",
+    "coefficient": 0.0259
+  },
+  {
+    "feature": "gender_Male",
+    "coefficient": 0.0221
+  },
+  {
+    "feature": "age_[50-60)",
+    "coefficient": -0.0204
+  },
+  {
+    "feature": "age_[40-50)",
+    "coefficient": 0.0143
+  },
+  {
+    "feature": "gender_Unknown/Invalid",
+    "coefficient": -0.0107
+  }
+]
